@@ -11,8 +11,6 @@ namespace BilgeAdam.OOP.Workshop.Models
         }
         public int Id { get; }
 
-        public void Publish()
-        {
-        }
+        public string Title { get; set; }
     }
 }

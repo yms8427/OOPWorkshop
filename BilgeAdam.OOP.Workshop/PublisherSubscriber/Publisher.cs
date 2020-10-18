@@ -1,39 +1,49 @@
-﻿using System;
+﻿using BilgeAdam.OOP.Workshop.Abstractions;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BilgeAdam.OOP.Workshop.PublisherSubscriber
 {
-    class Publisher
+    public class Publisher
     {
-        public List<Subscriber> Subscribers { get; set; }
-        public void Notify()
+        private List<Subscriber> subscribers;
+
+        public Publisher()
         {
-            foreach (var sub in Subscribers)
+            subscribers = new List<Subscriber>();
+        }
+        public string Name { get; set; }
+        public void Notify(IPublishable content)
+        {
+            foreach (var sub in subscribers)
             {
-              //TODO : broadcast  
+                sub.ContentNotified(content);
             }
         }
-    }
 
-    class Subscriber
-    {
-        public Subscriber()
+        internal void Add(Subscriber subscriber)
         {
-            Id = Guid.NewGuid();
+            foreach (var sub in subscribers)
+            {
+                if (sub.Id == subscriber.Id)
+                {
+                    return;
+                }
+            }
+
+            subscribers.Add(subscriber);
         }
-        public Guid Id { get; set; }
 
-        public void Subscribe(Publisher publisher)
+        internal void Remove(Subscriber subscriber)
         {
-            //Event raised
-        }
-
-        public void Unsubscribe(Publisher publisher)
-        {
-            //remove
+            foreach (var sub in subscribers)
+            {
+                if (sub.Id == subscriber.Id)
+                {
+                    subscribers.Remove(sub);
+                    break;
+                }
+            }
         }
     }
 }

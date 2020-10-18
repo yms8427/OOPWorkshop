@@ -34,6 +34,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.lblIdentity = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lstAnnouncements
@@ -87,11 +88,21 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "Bildirimler";
             // 
+            // lblIdentity
+            // 
+            this.lblIdentity.AutoSize = true;
+            this.lblIdentity.Location = new System.Drawing.Point(12, 224);
+            this.lblIdentity.Name = "lblIdentity";
+            this.lblIdentity.Size = new System.Drawing.Size(79, 13);
+            this.lblIdentity.TabIndex = 2;
+            this.lblIdentity.Text = "Abone Kimliği : ";
+            // 
             // frmSubscriber
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(585, 222);
+            this.ClientSize = new System.Drawing.Size(585, 246);
+            this.Controls.Add(this.lblIdentity);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -103,6 +114,7 @@
             this.MinimizeBox = false;
             this.Name = "frmSubscriber";
             this.Text = "Abone";
+            this.Load += new System.EventHandler(this.frmSubscriber_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -116,5 +128,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblIdentity;
     }
 }

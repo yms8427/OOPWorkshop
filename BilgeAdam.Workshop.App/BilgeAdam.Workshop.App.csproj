@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>ps.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -52,6 +55,12 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmNewsSubscriber.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNewsSubscriber.Designer.cs">
+      <DependentUpon>frmNewsSubscriber.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSubscriber.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +71,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNewsSubscriber.resx">
+      <DependentUpon>frmNewsSubscriber.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSubscriber.resx">
       <DependentUpon>frmSubscriber.cs</DependentUpon>
@@ -93,6 +105,9 @@
       <Project>{2740A521-64A7-41E7-BFEF-98EE0868CE56}</Project>
       <Name>BilgeAdam.OOP.Workshop</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ps.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

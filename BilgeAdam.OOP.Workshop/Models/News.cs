@@ -10,9 +10,7 @@ namespace BilgeAdam.OOP.Workshop.Models
             Id = IdGenerator.Create<News>();
         }
         public int Id { get; }
-
-        public void Publish()
-        {
-        }
+        public string Title { get; set; }
+        public string Content { get; set; }
     }
 }

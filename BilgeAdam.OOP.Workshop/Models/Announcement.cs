@@ -1,5 +1,6 @@
 ﻿using BilgeAdam.OOP.Workshop.Abstractions;
 using BilgeAdam.OOP.Workshop.Helpers;
+using System;
 
 namespace BilgeAdam.OOP.Workshop.Models
 {
@@ -11,8 +12,8 @@ namespace BilgeAdam.OOP.Workshop.Models
         }
         public int Id { get; }
 
-        public void Publish()
-        {
-        }
+        public string Title { get; set; }
+        public string Content { get; set; }
+        public DateTime DueDate { get; set; }
     }
 }

@@ -3,6 +3,6 @@
     public interface IPublishable
     {
         int Id { get; }
-        void Publish();
+        string Title { get; set; }
     }
 }
